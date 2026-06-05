@@ -28,13 +28,13 @@ body{
     padding:15px;
 }
 
-/* ===== TITULOS ===== */
+/* TEXTOS */
 
 .orange-box{
     display:inline-block;
     background:#f7a600;
     color:#000;
-    font-size:16px;
+    font-size:14px;
     font-weight:900;
     padding:8px 12px;
     line-height:1.2;
@@ -43,7 +43,7 @@ body{
 
 .orange-text{
     color:#f7a600;
-    font-size:24px;
+    font-size:22px;
     font-weight:900;
     line-height:1.15;
     margin-bottom:10px;
@@ -51,30 +51,36 @@ body{
 
 .white-text{
     color:#fff;
-    font-size:16px;
+    font-size:15px;
     line-height:1.4;
     margin-bottom:20px;
 }
 
-/* ===== VIDEO ===== */
+/* VIDEO */
 
 .video-container{
     width:100%;
+    display:flex;
+    justify-content:center;
     margin-bottom:25px;
 }
 
 video{
     width:100%;
-    display:block;
+    max-width:420px;
+    aspect-ratio:9/16;
+    object-fit:cover;
     border-radius:12px;
     background:#111;
 }
 
-/* ===== BOTON ===== */
+/* BOTON */
 
 .buy-btn{
-    display:block;
+    display:none;
     width:100%;
+    max-width:420px;
+    margin:auto;
     background:#1ed760;
     color:#000;
     text-decoration:none;
@@ -85,39 +91,13 @@ video{
     margin-bottom:30px;
 }
 
-.buy-btn:hover{
-    opacity:0.95;
-}
-
-/* ===== FOOTER ===== */
-
 footer{
     color:#8d8d8d;
     font-size:11px;
     line-height:1.6;
     padding-bottom:20px;
-}
-
-/* ===== CELULARES ===== */
-
-@media(max-width:600px){
-
-    .orange-box{
-        font-size:14px;
-    }
-
-    .orange-text{
-        font-size:20px;
-    }
-
-    .white-text{
-        font-size:15px;
-    }
-
-    .buy-btn{
-        font-size:22px;
-    }
-
+    max-width:700px;
+    margin:auto;
 }
 
 </style>
@@ -142,24 +122,43 @@ footer{
     </div>
 
     <div class="video-container">
-        <video controls>
+        <video
+            id="vsl"
+            autoplay
+            muted
+            playsinline
+            preload="auto">
             <source src="video.mp4" type="video/mp4">
         </video>
     </div>
 
-    <a href="https://TU-LINK-DE-HOTMART" class="buy-btn">
-        COMPRAR AHORA
+    <a
+       href="https://TU-LINK-DE-HOTMART"
+       id="buyButton"
+       class="buy-btn">
+       COMPRAR AHORA
     </a>
 
-    <footer>
-        © 2026 – Todos los derechos reservados.<br><br>
-
-        Este sitio ofrece contenido informativo y experiencias guiadas de carácter educativo.<br>
-
-        Los resultados pueden variar según la persona y no están garantizados.
-    </footer>
-
 </div>
+
+<footer>
+    © 2026 – Todos los derechos reservados.<br><br>
+
+    Este sitio ofrece contenido informativo y experiencias guiadas de carácter educativo.<br>
+
+    Los resultados pueden variar según la persona y no están garantizados.
+</footer>
+
+<script>
+
+const video = document.getElementById("vsl");
+const button = document.getElementById("buyButton");
+
+video.addEventListener("ended", () => {
+    button.style.display = "block";
+});
+
+</script>
 
 </body>
 </html>
