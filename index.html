@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Descubrí la mentira en 60 segundos</title>
 
 <style>
@@ -18,84 +19,105 @@ body{
     color:#fff;
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;
-    padding:30px 15px;
 }
 
 .container{
-    max-width:800px;
+    width:100%;
+    max-width:700px;
     margin:auto;
+    padding:15px;
 }
 
-/* TITULOS */
+/* ===== TITULOS ===== */
 
 .orange-box{
     display:inline-block;
     background:#f7a600;
     color:#000;
-    font-size:clamp(26px,5vw,46px);
+    font-size:16px;
     font-weight:900;
-    padding:12px 18px;
+    padding:8px 12px;
     line-height:1.2;
-    margin-bottom:25px;
+    margin-bottom:10px;
 }
 
 .orange-text{
     color:#f7a600;
-    font-size:clamp(28px,5vw,52px);
+    font-size:24px;
     font-weight:900;
     line-height:1.15;
-    margin-bottom:25px;
+    margin-bottom:10px;
 }
 
 .white-text{
     color:#fff;
-    font-size:clamp(22px,4vw,36px);
+    font-size:16px;
     line-height:1.4;
-    margin-bottom:40px;
+    margin-bottom:20px;
 }
 
-/* VIDEO */
+/* ===== VIDEO ===== */
 
 .video-container{
     width:100%;
-    margin-bottom:35px;
+    margin-bottom:25px;
 }
 
 video{
     width:100%;
+    display:block;
     border-radius:12px;
     background:#111;
 }
 
-/* BOTON */
+/* ===== BOTON ===== */
 
 .buy-btn{
-    display:inline-block;
+    display:block;
     width:100%;
-    max-width:500px;
     background:#1ed760;
     color:#000;
     text-decoration:none;
-    font-size:32px;
+    font-size:24px;
     font-weight:900;
-    padding:22px;
-    border-radius:12px;
-    margin-bottom:50px;
-    transition:0.3s;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:30px;
 }
 
 .buy-btn:hover{
-    transform:scale(1.02);
+    opacity:0.95;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 
 footer{
-    color:#bdbdbd;
-    font-size:13px;
-    line-height:1.7;
-    max-width:700px;
-    margin:auto;
+    color:#8d8d8d;
+    font-size:11px;
+    line-height:1.6;
+    padding-bottom:20px;
+}
+
+/* ===== CELULARES ===== */
+
+@media(max-width:600px){
+
+    .orange-box{
+        font-size:14px;
+    }
+
+    .orange-text{
+        font-size:20px;
+    }
+
+    .white-text{
+        font-size:15px;
+    }
+
+    .buy-btn{
+        font-size:22px;
+    }
+
 }
 
 </style>
@@ -122,11 +144,10 @@ footer{
     <div class="video-container">
         <video controls>
             <source src="video.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
         </video>
     </div>
 
-    <a href="https://TU-LINK-DE-COMPRA.com" class="buy-btn">
+    <a href="https://TU-LINK-DE-HOTMART" class="buy-btn">
         COMPRAR AHORA
     </a>
 
