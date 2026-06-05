@@ -56,6 +56,21 @@ body{
     margin-bottom:20px;
 }
 
+.highlight-orange{
+    color:#f7a600;
+    font-weight:900;
+}
+
+.highlight-result{
+    display:block;
+    color:#f7a600;
+    font-size:1.7em;
+    font-weight:900;
+    margin-top:10px;
+    text-transform:uppercase;
+    line-height:1.1;
+}
+
 /* VIDEO */
 
 .video-container{
@@ -74,7 +89,7 @@ video{
     background:#111;
 }
 
-/* BOTON */
+/* BOTÓN */
 
 .buy-btn{
     display:none;
@@ -89,7 +104,14 @@ video{
     padding:18px;
     border-radius:10px;
     margin-bottom:30px;
+    transition:0.3s;
 }
+
+.buy-btn:hover{
+    transform:scale(1.02);
+}
+
+/* FOOTER */
 
 footer{
     color:#8d8d8d;
@@ -118,7 +140,11 @@ footer{
 
     <div class="white-text">
         Con tan solo 60 segundos de observación luego de la
-        PREGUNTA IRREFUTABLE podrás saber si esa persona te mintió o no.
+        <span class="highlight-orange">PREGUNTA IRREFUTABLE</span>
+
+        <span class="highlight-result">
+            SI TE MINTIÓ O NO
+        </span>
     </div>
 
     <div class="video-container">
