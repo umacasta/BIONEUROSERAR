@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,19 +57,12 @@ body{
     margin-bottom:20px;
 }
 
-.highlight-orange{
-    color:#f7a600;
+.highlight{
+    background:#fff;
+    color:#000;
+    padding:2px 6px;
+    border-radius:4px;
     font-weight:900;
-}
-
-.highlight-result{
-    display:block;
-    color:#f7a600;
-    font-size:1.7em;
-    font-weight:900;
-    margin-top:10px;
-    text-transform:uppercase;
-    line-height:1.1;
 }
 
 /* VIDEO */
@@ -89,7 +83,7 @@ video{
     background:#111;
 }
 
-/* BOTÓN */
+/* BOTON */
 
 .buy-btn{
     display:none;
@@ -104,14 +98,7 @@ video{
     padding:18px;
     border-radius:10px;
     margin-bottom:30px;
-    transition:0.3s;
 }
-
-.buy-btn:hover{
-    transform:scale(1.02);
-}
-
-/* FOOTER */
 
 footer{
     color:#8d8d8d;
@@ -139,39 +126,27 @@ footer{
     </div>
 
     <div class="white-text">
-        Con tan solo 60 segundos de observación luego de la
-        <span class="highlight-orange">PREGUNTA IRREFUTABLE</span>
-
-        <span class="highlight-result">
-            SI TE MINTIÓ O NO
-        </span>
+        Con tan solo 60 segundos de observación luego de la PREGUNTA IRREFUTABLE podrás saber
+        <span class="highlight">si esa persona te mintió o no</span>.
     </div>
 
     <div class="video-container">
-        <video
-            id="vsl"
-            autoplay
-            muted
-            playsinline
-            preload="auto">
+        <video id="vsl" autoplay muted playsinline preload="auto">
             <source src="video.mp4" type="video/mp4">
         </video>
     </div>
 
-    <a
-       href="https://TU-LINK-DE-HOTMART"
-       id="buyButton"
-       class="buy-btn">
-       COMPRAR AHORA
+    <a href="https://TU-LINK-DE-HOTMART" id="buyButton" class="buy-btn">
+        COMPRAR AHORA
     </a>
 
 </div>
 
 <footer>
-    © 2026 – Todos los derechos reservados.<br><br>
-
-    Este sitio ofrece contenido informativo y experiencias guiadas de carácter educativo.<br>
-
+    © 2026 – Todos los derechos reservados.
+    <br><br>
+    Este sitio ofrece contenido informativo y experiencias guiadas de carácter educativo.
+    <br>
     Los resultados pueden variar según la persona y no están garantizados.
 </footer>
 
@@ -188,3 +163,4 @@ video.addEventListener("ended", () => {
 
 </body>
 </html>
+```
