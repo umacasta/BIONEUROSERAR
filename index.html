@@ -62,6 +62,19 @@ body{
     line-height:1.2;
 }
 
+.sound-btn{
+    display:inline-block;
+    background:#f7a600;
+    color:#000;
+    border:none;
+    padding:8px 14px;
+    font-size:13px;
+    font-weight:900;
+    border-radius:6px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
 .video-container{
     width:100%;
     display:flex;
@@ -78,19 +91,6 @@ iframe{
     background:#111;
 }
 
-.sound-btn{
-    display:inline-block;
-    background:#f7a600;
-    color:#000;
-    border:none;
-    padding:14px 22px;
-    font-size:18px;
-    font-weight:900;
-    border-radius:8px;
-    cursor:pointer;
-    margin-bottom:20px;
-}
-
 .buy-btn{
     display:none;
     width:100%;
@@ -99,11 +99,12 @@ iframe{
     background:#1ed760;
     color:#000;
     text-decoration:none;
-    font-size:24px;
+    font-size:32px;
     font-weight:900;
-    padding:18px;
-    border-radius:10px;
-    margin-bottom:30px;
+    padding:24px;
+    border-radius:12px;
+    margin-top:20px;
+    margin-bottom:40px;
 }
 
 footer{
@@ -136,6 +137,10 @@ footer{
         <span class="big-highlight">SI ESA PERSONA TE MINTIÓ O NO</span>
     </div>
 
+    <button id="soundButton" class="sound-btn">
+        🔊 ACTIVAR SONIDO
+    </button>
+
     <div class="video-container">
         <iframe
             id="vsl"
@@ -144,10 +149,6 @@ footer{
             allowfullscreen>
         </iframe>
     </div>
-
-    <button id="soundButton" class="sound-btn">
-        🔊 ACTIVAR SONIDO
-    </button>
 
     <a href="https://TU-LINK-DE-HOTMART" id="buyButton" class="buy-btn">
         COMPRAR AHORA
@@ -169,17 +170,17 @@ footer{
 
 const iframe = document.getElementById('vsl');
 const player = new Vimeo.Player(iframe);
+const buyButton = document.getElementById('buyButton');
+const soundButton = document.getElementById('soundButton');
 
-document.getElementById('soundButton').addEventListener('click', async () => {
+soundButton.addEventListener('click', async () => {
 
     try {
-
         await player.setMuted(false);
         await player.setVolume(1);
         await player.play();
 
-        document.getElementById('soundButton').innerText =
-        '✅ SONIDO ACTIVADO';
+        soundButton.innerText = '✅ SONIDO ACTIVADO';
 
     } catch(error) {
         console.log(error);
@@ -187,8 +188,11 @@ document.getElementById('soundButton').addEventListener('click', async () => {
 
 });
 
+player.on('ended', function() {
+    buyButton.style.display = 'block';
+});
+
 </script>
 
 </body>
 </html>
-```
