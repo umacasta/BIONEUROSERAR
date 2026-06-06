@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +8,6 @@
 <title>Descubrí la mentira en 60 segundos</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -66,7 +66,7 @@ body{
     width:100%;
     display:flex;
     justify-content:center;
-    margin-bottom:15px;
+    margin-bottom:25px;
 }
 
 iframe{
@@ -76,19 +76,6 @@ iframe{
     border:none;
     border-radius:12px;
     background:#111;
-}
-
-.sound-btn{
-    display:inline-block;
-    background:#f7a600;
-    color:#000;
-    border:none;
-    padding:14px 22px;
-    font-size:18px;
-    font-weight:900;
-    border-radius:8px;
-    cursor:pointer;
-    margin-bottom:20px;
 }
 
 .buy-btn{
@@ -114,7 +101,6 @@ footer{
     max-width:700px;
     margin:auto;
 }
-
 </style>
 </head>
 
@@ -140,14 +126,10 @@ footer{
         <iframe
             id="vsl"
             src="https://player.vimeo.com/video/1199073265?autoplay=1&muted=1&playsinline=1&controls=0&title=0&byline=0&portrait=0"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen>
         </iframe>
     </div>
-
-    <button id="soundButton" class="sound-btn">
-        🔊 ACTIVAR SONIDO
-    </button>
 
     <a href="https://TU-LINK-DE-HOTMART" id="buyButton" class="buy-btn">
         COMPRAR AHORA
@@ -163,29 +145,6 @@ footer{
     Los resultados pueden variar según la persona y no están garantizados.
 </footer>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<script>
-
-const iframe = document.getElementById('vsl');
-const player = new Vimeo.Player(iframe);
-
-document.getElementById('soundButton').addEventListener('click', async () => {
-
-    try {
-        await player.setMuted(false);
-        await player.setVolume(1);
-
-        document.getElementById('soundButton').innerText =
-        '✅ SONIDO ACTIVADO';
-
-    } catch(err){
-        console.log(err);
-    }
-
-});
-
-</script>
-
 </body>
 </html>
+```
