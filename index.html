@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,11 +74,11 @@ body{
     margin-bottom:25px;
 }
 
-video{
+iframe{
     width:100%;
     max-width:420px;
     aspect-ratio:9/16;
-    object-fit:cover;
+    border:none;
     border-radius:12px;
     background:#111;
 }
@@ -130,9 +131,12 @@ footer{
     </div>
 
     <div class="video-container">
-        <video id="vsl" autoplay muted playsinline preload="auto">
-            <source src="video.mp4" type="video/mp4">
-        </video>
+        <iframe
+            id="vsl"
+            src="https://player.vimeo.com/video/1199073265?autoplay=1&muted=1&playsinline=1"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+        </iframe>
     </div>
 
     <a href="https://TU-LINK-DE-HOTMART" id="buyButton" class="buy-btn">
@@ -151,12 +155,10 @@ footer{
 
 <script>
 
-const video = document.getElementById("vsl");
 const button = document.getElementById("buyButton");
 
-video.addEventListener("ended", () => {
-    button.style.display = "block";
-});
+/* Con Vimeo, este botón no aparece al finalizar todavía.
+   Primero probamos que el video se vea bien en la landing. */
 
 </script>
 
