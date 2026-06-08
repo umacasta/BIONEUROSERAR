@@ -32,34 +32,34 @@ body{
     display:inline-block;
     background:#ff6b00;
     color:#000;
-   font-size:22px;
+    font-size:22px;
     font-weight:900;
     padding:10px 14px;
     line-height:1.1;
-    margin-bottom:16px;
+    margin-bottom:20px;
 }
 
 .orange-text{
     color:#ff6b00;
-   font-size:15px;
+    font-size:15px;
     font-weight:900;
-    line-height:1.15;
-    margin-bottom:12px;
+    line-height:1.3;
+    margin-bottom:16px;
 }
 
 .white-text{
     color:#fff;
     font-size:15px;
-    line-height:1.4;
-    margin-bottom:14px;
+    line-height:1.5;
+    margin-bottom:18px;
 }
 
 .big-highlight{
     font-size:15px;
     font-weight:900;
     display:block;
-    margin-top:10px;
-    line-height:1.2;
+    margin-top:12px;
+    line-height:1.3;
 }
 
 .sound-btn{
@@ -75,20 +75,41 @@ body{
     margin-bottom:14px;
 }
 
+.video-wrapper{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+    margin-bottom:15px;
+}
+
 .video-container{
     width:100%;
     display:flex;
     justify-content:center;
-    margin-bottom:15px;
 }
 
 iframe{
     width:100%;
-    max-width:420px;
     aspect-ratio:9/16;
     border:none;
-    border-radius:12px;
+    border-radius:12px 12px 0 0;
     background:#111;
+    display:block;
+}
+
+.progress-container{
+    width:100%;
+    height:6px;
+    background:#222;
+    overflow:hidden;
+    border-radius:0 0 12px 12px;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#ff6b00;
+    transition:width .2s linear;
 }
 
 .buy-btn{
@@ -117,13 +138,14 @@ footer{
 }
 
 @media(max-width:480px){
-.orange-text{
-    font-size:22px;
-}
+    .orange-box{
+        font-size:22px;
+    }
 
-.big-highlight{
-    font-size:15px;
-}
+    .orange-text{
+        font-size:15px;
+    }
+
     .white-text{
         font-size:15px;
     }
@@ -162,13 +184,19 @@ footer{
         🔊 ACTIVAR SONIDO
     </button>
 
-    <div class="video-container">
-        <iframe
-            id="vsl"
-            src="https://player.vimeo.com/video/1199073265?autoplay=1&muted=1&playsinline=1&controls=0&title=0&byline=0&portrait=0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+    <div class="video-wrapper">
+        <div class="video-container">
+            <iframe
+                id="vsl"
+               src="https://player.vimeo.com/video/1199297457?autoplay=1&muted=1&playsinline=1&controls=0&title=0&byline=0&portrait=0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
     </div>
 
     <a href="https://TU-LINK-DE-HOTMART" id="buyButton" class="buy-btn">
@@ -193,6 +221,7 @@ const iframe = document.getElementById('vsl');
 const player = new Vimeo.Player(iframe);
 const buyButton = document.getElementById('buyButton');
 const soundButton = document.getElementById('soundButton');
+const progressBar = document.getElementById('progressBar');
 
 soundButton.addEventListener('click', async () => {
 
@@ -209,7 +238,25 @@ soundButton.addEventListener('click', async () => {
 
 });
 
+setInterval(async () => {
+
+    try {
+        const duration = await player.getDuration();
+        const current = await player.getCurrentTime();
+
+        if(duration > 0){
+            const percent = (current / duration) * 100;
+            progressBar.style.width = percent + "%";
+        }
+
+    } catch(error) {
+        console.log(error);
+    }
+
+}, 250);
+
 player.on('ended', function() {
+    progressBar.style.width = "100%";
     buyButton.style.display = 'block';
 });
 
