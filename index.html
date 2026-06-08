@@ -188,7 +188,7 @@ footer{
         <div class="video-container">
             <iframe
                 id="vsl"
-               src="https://player.vimeo.com/video/1199297457?autoplay=1&muted=1&playsinline=1&controls=0&title=0&byline=0&portrait=0"
+                src="https://player.vimeo.com/video/1199297457?autoplay=1&muted=1&playsinline=1&controls=0&title=0&byline=0&portrait=0&dnt=1"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen>
             </iframe>
@@ -199,9 +199,9 @@ footer{
         </div>
     </div>
 
-  <a href="https://go.hotmart.com/Y106074486B" id="buyButton" class="buy-btn" target="_blank">
-    COMPRAR AHORA
-</a>
+    <a href="https://go.hotmart.com/Y106074486B" id="buyButton" class="buy-btn" target="_blank">
+        COMPRAR AHORA
+    </a>
 
 </div>
 
@@ -258,6 +258,7 @@ setInterval(async () => {
 player.on('ended', function() {
     progressBar.style.width = "100%";
     buyButton.style.display = 'block';
+    iframe.style.display = 'none';
 });
 
 </script>
